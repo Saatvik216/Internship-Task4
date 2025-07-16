@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filtering Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Our Products</h1>
+            <p>Browse our collection and find what you need</p>
+        </header>
+
+        <div class="controls">
+            <div class="filter-section">
+                <h3>Filters</h3>
+                
+                <div class="filter-group">
+                    <label for="category-filter">Category:</label>
+                    <select id="category-filter">
+                        <option value="all">All Categories</option>
+                        <!-- Categories will be populated by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="price-range">Price Range:</label>
+                    <div class="price-range-container">
+                        <span>$0</span>
+                        <input type="range" id="price-range" min="0" max="1000" step="10" value="1000">
+                        <span id="max-price-display">$1000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sort-section">
+                <h3>Sort By</h3>
+                <div class="sort-options">
+                    <button class="sort-btn active" data-sort="rating">Rating</button>
+                    <button class="sort-btn" data-sort="price-asc">Price: Low to High</button>
+                    <button class="sort-btn" data-sort="price-desc">Price: High to Low</button>
+                    <button class="sort-btn" data-sort="name">Name (A-Z)</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be loaded here by JavaScript -->
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
